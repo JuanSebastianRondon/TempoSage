@@ -1,9 +1,10 @@
-# save this as app.py
 from fastapi import FastAPI
+from servicios.ServicioUsuarios import router
 
-app = FastAPI()
+app=FastAPI()
 
-@app.get("/")
-def read_root():
-    return "Buenas!"
+def main():
+    app.include_router(router)
 
+if __name__== "__main__":
+    main() 
